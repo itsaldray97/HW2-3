@@ -1,3 +1,4 @@
+import web3
 from web3 import Web3
 from eth_account.messages import encode_defunct
 import eth_account
@@ -41,3 +42,7 @@ if __name__ == "__main__":
         sig, addr = sign_message(challenge=challenge)
         print(sig)
         print(addr)
+
+        key = "0x6608bee2f462fa92b53bf52acb0ebfab6e8597ac618059d028f07b4f08023c16"
+        acct = eth_account.Account.from_key(key)
+        print("Address:", acct.address)
